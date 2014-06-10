@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DbGenLibrary.CSharp;
 using DbGenLibrary.IO;
+using DbGenLibrary.Properties;
 using DbGenLibrary.SchemaExtend;
 using DbGenLibrary.SqlSchema;
 using DbGenLibrary.Text;
@@ -31,8 +32,8 @@ namespace DbGenLibrary.SolutionGen.MVC
         {
             var t = new Class(string.Format("{0}Model", table.ClassText))
             {
-                Properties = table.Columns.Where(c => c.Display).Select(ToProperty).ToList(),
-                Attribute = new Attribute(string.Format("DisplayName(\"{0}\")", table.ClassLabel))
+                Properties = table.Columns.Where(c => c.Display||c.IsPrimaryKey).Select(ToProperty).ToList(),
+                Attribute = new Attribute(string.Format("DisplayName(\"{0}\")", table.ClassLabel)), Extend = CastFor(table) + "\n\n" + BackCastFor(table)
             };
 
             return t;
@@ -42,31 +43,42 @@ namespace DbGenLibrary.SolutionGen.MVC
         {
             var p = new Property
             {
-                Name = schemaColumn.ColumnName.SimpleString(),
+                Name = schemaColumn.PropertyText.SimpleString(),
                 Type = schemaColumn.Type,
-
             };
             p.Attributes.Add(new Attribute(string.Format("DisplayName(\"{0}\")", schemaColumn.PropertyLabel)));
 
-            /*
-           if (schemaColumn.IsNullable)
-                p.Attributes.Add(new Attribute("Nullable"));
-            if (schemaColumn.IsIdentity)
-                p.Attributes.Add(new Attribute("Identity"));
-            if (schemaColumn.IsPrimaryKey)
-                p.Attributes.Add(new Attribute(string.Format("PrimaryKey({0})", schemaColumn.PkIndex)));
-            */
+            if (!schemaColumn.IsNullable && !schemaColumn.IsPrimaryKey)
+                p.Attributes.Add(new Attribute("Required"));
             return p;
         }
 
 
         public static string CastFor(MapTable table)
         {
-            throw new NotImplementedException();
+            var cast = MvcModelResources.Cast.WithIndent(2);
+            var prop = table.Columns.Where(c => c.Display || c.IsPrimaryKey)
+                .Select(c => string.Format("{0} = @ClassNameLower@.{0}", c.PropertyText).WithIndent(4)).ToList();
+
+            var s = string.Join(",\n", prop);
+            cast = cast.Replace("@SetVal@", s);
+
+            cast = cast.Replace("@ClassName@", table.ClassText);
+            cast = cast.Replace("@ClassNameLower@", table.ClassText.ToLower());
+            return cast;
         }
         public static string BackCastFor(MapTable table)
         {
-            throw new NotImplementedException();
+            var cast = MvcModelResources.BackCast.WithIndent(2);
+            var prop = table.Columns.Where(c => c.Display || c.IsPrimaryKey)
+                .Select(c => string.Format("{0} = @ClassNameLower@.{0}", c.PropertyText).WithIndent(4)).ToList();
+
+            var s = string.Join(",\n", prop);
+            cast = cast.Replace("@SetVal@", s);
+
+            cast = cast.Replace("@ClassName@", table.ClassText);
+            cast = cast.Replace("@ClassNameLower@", table.ClassText.ToLower());
+            return cast;
         }
     }
 }

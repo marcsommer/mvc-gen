@@ -30,6 +30,7 @@ namespace DbGenLibrary.SolutionGen.MVC
 
             GenViews(folder, info);
             GenModel(folder, info);
+            GenController(folder, info);
         }
 
 
@@ -44,11 +45,19 @@ namespace DbGenLibrary.SolutionGen.MVC
             }
         }
 
+        private static void GenController(ProjectFolder folder, GenInfo info)
+        {
+            foreach (MapTable table in info.Tables.Where(t => t.Display))
+            {
+                folder["Controllers"].Files.Add(Controller.ControllderFor(table));
+            }
+        }
+
         private static void GenModel(ProjectFolder folder, GenInfo info)
         {
             foreach (MapTable table in info.Tables.Where(t => t.Display))
             {
-                folder["Models"].Files.Add(Model.ModelFor(table,info));
+                folder["Models"].Files.Add(Model.ModelFor(table, info));
             }
         }
 
@@ -60,7 +69,7 @@ namespace DbGenLibrary.SolutionGen.MVC
             foreach (MapTable table in info.Tables.Where(t => t.Display))
             {
                 itemGroup.AppendLine(string.Format("<Compile Include=\"Models\\{0}Model.cs\" />", table.ClassText).WithIndent(1));
-                //  itemGroup.AppendLine(string.Format("<Compile Include=\"Controllers\\{0}Controller.cs\" />", table.ClassText).WithIndent(1));
+                itemGroup.AppendLine(string.Format("<Compile Include=\"Controllers\\{0}Controller.cs\" />", table.ClassText).WithIndent(1));
 
                 itemGroup.AppendLine(string.Format("<Content Include=\"Views\\{0}\\Index.cshtml\" />", table.ClassText).WithIndent(1));
                 itemGroup.AppendLine(string.Format("<Content Include=\"Views\\{0}\\Create.cshtml\" />", table.ClassText).WithIndent(1));
