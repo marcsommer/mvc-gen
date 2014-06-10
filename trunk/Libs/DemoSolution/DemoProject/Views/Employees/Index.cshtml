@@ -1,0 +1,87 @@
+﻿@using DemoProject.Models
+@using PagedList.Mvc
+@model PagedList.IPagedList<DemoProject.Models.EmployeModel>
+
+@{
+    ViewBag.Title = "Trang chủ ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Trang chủ</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.First().LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TitleOfCourtesy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().PostalCode)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (EmployeModel item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleOfCourtesy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+
+            <td>
+                @Html.ActionLink(" ", "Edit", new {id = item.EmployeeID}, new {@class = "glyphicon glyphicon-pencil text-warning"}) |
+                @Html.ActionLink(" ", "Details", new {id = item.EmployeeID}, new {@class = "glyphicon glyphicon-eye-open text-success"})|
+                @Html.ActionLink(" ", "Delete", new {id = item.EmployeeID, page=Model.PageNumber}, new {@class = "glyphicon glyphicon-remove text-danger", onclick = "return confirm('Bạn có muốn xóa dòng này?')"})
+            </td>
+        </tr>
+    }
+</table>
+<br />
+@if (Model.PageSize*Model.PageCount > Model.PageSize)
+{
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new {page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter}))
+}

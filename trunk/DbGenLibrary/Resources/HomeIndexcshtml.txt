@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@WebTitle@</h2>
+<hr/>
+
+
+<h4>Các chức năng chính</h4>
+<ol>
+
+@ActionLink@
+
+</ol>
+

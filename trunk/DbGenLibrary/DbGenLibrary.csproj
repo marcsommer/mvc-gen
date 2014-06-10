@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2717E61F-8F1A-4B2F-B9F5-2F19B10FC597}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DbGenLibrary</RootNamespace>
+    <AssemblyName>DbGenLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlWmiManagement, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.SqlServer.SqlWmiManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IO\BinaryFile.cs" />
+    <Compile Include="IO\TextFile.cs" />
+    <Compile Include="Properties\MvcResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcResources.resx</DependentUpon>
+    </Compile>
+    <None Include="Resources\bootstrapjs" />
+    <None Include="Resources\Errorcshtml" />
+    <None Include="Resources\glyphicons-halflings-regular.eot" />
+    <None Include="Resources\glyphicons-halflings-regular.ttf" />
+    <None Include="Resources\BundleConfig.cs" />
+    <None Include="Resources\FilterConfig.cs" />
+    <None Include="Resources\glyphicons-halflings-regular.woff" />
+    <None Include="Resources\jquery-211intellisensejs" />
+    <None Include="Resources\jquery-211js" />
+    <None Include="Resources\jquery-211minmap" />
+    <None Include="Resources\jqueryvalidate-vsdocjs" />
+    <None Include="Resources\jqueryvalidatejs" />
+    <None Include="Resources\jqueryvalidateunobtrusivejs" />
+    <None Include="Resources\packages.config" />
+    <None Include="Resources\packagesBLL.config" />
+    <None Include="Resources\repositories.config" />
+    <None Include="Resources\respondjs" />
+    <None Include="Resources\RouteConfig.cs" />
+    <None Include="Resources\AssemblyInfo.cs" />
+    <None Include="Resources\Globalasaxcs.cs" />
+    <None Include="Resources\PageConfig.cs" />
+    <Compile Include="Properties\MvcViewsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcViewsResources.resx</DependentUpon>
+    </Compile>
+    <None Include="Resources\HomeController.cs" />
+    <Compile Include="SolutionGen\BusinessLogic\CsProject.cs" />
+    <Compile Include="SolutionGen\GenController.cs" />
+    <Compile Include="CSharp\Attribute.cs" />
+    <Compile Include="CSharp\Class.cs" />
+    <Compile Include="CSharp\ICsharpComponent.cs" />
+    <Compile Include="CSharp\Method.cs" />
+    <Compile Include="CSharp\NameSpace.cs" />
+    <Compile Include="CSharp\Parameter.cs" />
+    <Compile Include="CSharp\Property.cs" />
+    <Compile Include="IO\IoUtility.cs" />
+    <Compile Include="IO\ProjectFile.cs" />
+    <Compile Include="IO\ProjectFolder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\BusinessLogicResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessLogicResources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.Config" />
+    <None Include="Resources\App.config" />
+    <None Include="Resources\DataProvider.cs" />
+    <None Include="Resources\IProvider.cs" />
+    <None Include="Resources\ProxyPattern.cs" />
+    <Compile Include="SchemaExtend\GenInfo.cs" />
+    <Compile Include="SchemaExtend\MapColumn.cs" />
+    <Compile Include="SchemaExtend\MapForeignKey.cs" />
+    <Compile Include="SchemaExtend\MapTable.cs" />
+    <Compile Include="SolutionGen\BusinessLogic\Mapping.cs" />
+    <Compile Include="SolutionGen\BusinessLogic\Services.cs" />
+    <Compile Include="SolutionGen\BusinessLogic\Repository.cs" />
+    <Compile Include="SolutionGen\MVC\Controller.cs" />
+    <Compile Include="SolutionGen\MVC\Model.cs" />
+    <Compile Include="SolutionGen\MVC\MvcProject.cs" />
+    <Compile Include="SolutionGen\MVC\Views.cs" />
+    <Compile Include="SqlSchema\AssociationType.cs" />
+    <Compile Include="SqlSchema\SchemaColumn.cs" />
+    <Compile Include="SqlSchema\SchemaForeignKey.cs" />
+    <Compile Include="SqlSchema\ISqlInformation.cs" />
+    <Compile Include="SqlSchema\SqlServer.cs" />
+    <Compile Include="SqlSchema\SchemaTable.cs" />
+    <Compile Include="SqlSchema\TypeConverter.cs" />
+    <Compile Include="Text\ITextWriteable.cs" />
+    <Compile Include="Text\TextUtility.cs" />
+    <Compile Include="Xml\XmlUtility.cs" />
+    <None Include="Resources\Web.config" />
+    <None Include="Resources\Webconfig_View" />
+    <None Include="Resources\_Layoutcshtml" />
+    <None Include="Resources\_referencesjs" />
+    <None Include="Resources\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SolutionGen\Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\BusinessLogicResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BusinessLogicResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MvcResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MvcResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MvcViewsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MvcViewsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BLToolkit.4.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BusinessLogic.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bootstrap.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PagedList.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Site.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glyphicons-halflings-regular.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bootstrap.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jquery-211.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jquery-211intellisense.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jquery-211minmap.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jqueryvalidate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jqueryvalidateunobtrusive.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jqueryvalidate-vsdoc.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respond.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Globalasax.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DemoSolution.sln" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DemoSolution.sln.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webconfig_View.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_ViewStartcshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Layoutcshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Errorcshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Createcshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Detailscshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editcshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Indexcshtml.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DemoProjectcsproj.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeIndexcshtml.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

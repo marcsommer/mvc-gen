@@ -1,0 +1,23 @@
+﻿@model @MvcNameSpace@.Models.@ClassName@Model
+
+@{
+    ViewBag.Title = "Chi Tiết "+@Html.LabelForModel();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hiển thị chi tiết @Html.LabelForModel()</h2>
+<hr />
+<div>
+    <h4>@Html.LabelForModel()</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+@RenderColums@
+
+		
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Trở về trang chủ", "Index")
+</p>
