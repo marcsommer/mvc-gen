@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lỗi</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Opps.</h1>
+        <h2>Xin lỗi, đã có lỗi xảy ra trong quá trình xử lý yêu cầu của bạn. Xin lỗi vì sự bất tiện này!</h2>
+    </hgroup>
+</body>
+</html>
