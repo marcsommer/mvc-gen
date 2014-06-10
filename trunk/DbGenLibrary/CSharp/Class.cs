@@ -35,7 +35,11 @@ namespace DbGenLibrary.CSharp
         {
             var s = new StringBuilder();
             if (Attribute != null)
+            {
+                s.AppendLine();
                 s.AppendLine(Attribute.GetText(indentLevel));
+            }
+
             s.AppendLine(Bases.Any() ? string.Format("{0} class {1} : {2}", Modifier, Name, string.Join(", ", Bases)).WithIndent(indentLevel) : string.Format("{0} class {1}", Modifier, Name).WithIndent(indentLevel));
             s.AppendLine("{".WithIndent(indentLevel)); //bắt đầu nội dung lớp
             foreach (Property property in Properties)

@@ -97,6 +97,17 @@
       <DependentUpon>MvcViewsResources.resx</DependentUpon>
     </Compile>
     <None Include="Resources\HomeController.cs" />
+    <Compile Include="Properties\MvcModelResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcModelResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\MvcControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcControllerResources.resx</DependentUpon>
+    </Compile>
+    <None Include="Resources\Controller.cs" />
     <Compile Include="SolutionGen\BusinessLogic\CsProject.cs" />
     <Compile Include="SolutionGen\GenController.cs" />
     <Compile Include="CSharp\Attribute.cs" />
@@ -162,6 +173,14 @@
     <EmbeddedResource Include="Properties\MvcViewsResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MvcViewsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MvcModelResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MvcModelResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MvcControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MvcControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
