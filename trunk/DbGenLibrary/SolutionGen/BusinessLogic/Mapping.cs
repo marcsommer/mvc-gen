@@ -33,7 +33,7 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
 
         static Class ToClass(MapTable table)
         {
-            var t = new Class(table.ClassText)
+            var t = new Class(table.TableName)
             {
                 Properties = table.Columns.Select(ToProperty).ToList()
             };
@@ -46,7 +46,7 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
                     Name = fk.OtherTable == t.Name || t.Properties.Any(pr => pr.Name.Equals(fk.OtherTable)) ? fk.KeyName : fk.OtherTable,
                 };
                 p.Attributes.Add(new Attribute(string.Format("Association(ThisKey=\"{0}\", OtherKey=\"{1}\", CanBeNull={2})",
-                  fk.ThisColumns  ,fk.OtherColumns,
+                  fk.ThisColumns, fk.OtherColumns,
                     fk.CanBeNull.ToString().ToLower())));
                 t.Properties.Add(p);
             }

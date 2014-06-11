@@ -121,4 +121,62 @@
   <data name="Controller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Controller.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>public ActionResult Delete(@KeyType?@ id, int? page)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            @ClassName@Model @ClassNameLower@ = _db.Find(e =&gt; e.@PrimaryKey@ == @KeyVal@).FirstOrDefault();
+            
+            if (@ClassNameLower@ == null)
+            {
+                return HttpNotFound();
+            }
+            _db.Delete(@ClassNameLower@);
+            return RedirectToAction("Index", new { page });
+        }</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>public ActionResult Details(@KeyType?@ id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            @ClassName@Model @ClassNameLower@ = _db.Find(e=&gt;e.@PrimaryKey@==@KeyVal@).FirstOrDefault();
+            if (@ClassNameLower@ == null)
+            {
+                return HttpNotFound();
+            }
+            return View(@ClassNameLower@);
+        }</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>public ActionResult Edit(@KeyType?@ id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            @ClassName@Model @ClassNameLower@ = _db.Find(e =&gt; e.@PrimaryKey@ == @KeyVal@).FirstOrDefault();
+            if (@ClassNameLower@ == null)
+            {
+                return HttpNotFound();
+            }
+            return View(@ClassNameLower@);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(@ClassName@Model @ClassNameLower@)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Update(@ClassNameLower@);
+                return RedirectToAction("Index");
+            }
+            return View(@ClassNameLower@);
+        }</value>
+  </data>
 </root>

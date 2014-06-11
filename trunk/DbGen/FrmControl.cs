@@ -168,6 +168,7 @@ namespace DbGen
                 _genInfo.PageSize = tbPageSize.Value;
                 _genInfo.ProjectTitle = string.IsNullOrWhiteSpace(txtTitle.Text) ? _genInfo.DbName : txtTitle.Text;
                 _genInfo.NameSpace = string.IsNullOrWhiteSpace(txtNameSpace.Text) ? _genInfo.DbName : txtNameSpace.Text;
+                _genInfo.Author = string.IsNullOrWhiteSpace(txtAuthor.Text) ? "Microsoft ASP.NET MVC" : txtAuthor.Text;
             }
             catch
             {
@@ -194,16 +195,16 @@ namespace DbGen
         }
         void GenMvcSolution()
         {
-            // try
+             try
             {
                 if (_genInfo == null)
                     throw new Exception("Xin vui lòng chọn cơ sở dữ liệu!");
                 GenController.GenMvcSolution(_genInfo).Write(txtTargetFolder.Text);
                 XtraMessageBox.Show("OK!");
             }
-            //  catch (Exception exception)
+              catch (Exception exception)
             {
-                //     XtraMessageBox.Show(exception.Message);
+                    XtraMessageBox.Show(exception.Message);
             }
 
         }
