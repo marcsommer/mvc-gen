@@ -13,7 +13,6 @@ namespace DbGenLibrary.CSharp
 
         public Attribute()
         {
-            
         }
 
         public Attribute(string attributeContext):this()

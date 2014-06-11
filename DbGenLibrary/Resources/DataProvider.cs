@@ -25,32 +25,78 @@ namespace @NameSpace@.Repository
 
         public int MassUpdate(Expression<Func<T, bool>> predicate, Expression<Func<T, T>> setter)
         {
-            return _dataContext.GetTable<T>().Update(predicate, setter);
+            try
+            {
+                return _dataContext.GetTable<T>().Update(predicate, setter);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public int MassDelete(Expression<Func<T, bool>> predicate)
         {
-            return _dataContext.GetTable<T>().Delete(predicate);
+            try
+            {
+                return _dataContext.GetTable<T>().Delete(predicate);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         public object Insert(T entity)
         {
-            return _dataContext.InsertWithIdentity(entity);
+            try
+            {
+                return _dataContext.InsertWithIdentity(entity);
+
+            }
+            catch (Exception exception)
+            {
+                return exception.Message;
+            }
         }
 
         public int Update(T entity)
         {
-            return _dataContext.Update(entity);
+            try
+            {
+                return _dataContext.Update(entity);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
         }
 
         public int Delete(T entity)
         {
-            return _dataContext.Delete(entity);
+            try
+            {
+                return _dataContext.Delete(entity);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
         }
 
         public int InsertBacth(IEnumerable<T> list)
         {
-            return _dataContext.InsertBatch(list);
+            try
+            {
+                return _dataContext.InsertBatch(list);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
         }
     }
 }

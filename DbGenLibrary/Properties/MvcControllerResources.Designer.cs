@@ -77,12 +77,79 @@ namespace DbGenLibrary.Properties {
         ///
         ///        public ActionResult Index(int? page)
         ///        {
-        ///            var @ClassName@ = _db.GetAll().Select(e =&gt; (@ClassName@Model)).ToList();
-        ///            return V [rest of string was truncated]&quot;;.
+        ///            var @ClassNameLower@ = _db.GetAll().Select(e =&gt; (@ClassName@Model)e).ToList();
+        ///            re [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Controller {
             get {
                 return ResourceManager.GetString("Controller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to public ActionResult Delete(@KeyType?@ id, int? page)
+        ///        {
+        ///            if (id == null)
+        ///            {
+        ///                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        ///            }
+        ///            @ClassName@Model @ClassNameLower@ = _db.Find(e =&gt; e.@PrimaryKey@ == @KeyVal@).FirstOrDefault();
+        ///            
+        ///            if (@ClassNameLower@ == null)
+        ///            {
+        ///                return HttpNotFound();
+        ///            }
+        ///            _db.Delete(@ClassNameLower@);
+        ///            return RedirectToAct [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to public ActionResult Details(@KeyType?@ id)
+        ///        {
+        ///            if (id == null)
+        ///            {
+        ///                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        ///            }
+        ///            @ClassName@Model @ClassNameLower@ = _db.Find(e=&gt;e.@PrimaryKey@==@KeyVal@).FirstOrDefault();
+        ///            if (@ClassNameLower@ == null)
+        ///            {
+        ///                return HttpNotFound();
+        ///            }
+        ///            return View(@ClassNameLower@);
+        ///        }.
+        /// </summary>
+        internal static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to public ActionResult Edit(@KeyType?@ id)
+        ///        {
+        ///            if (id == null)
+        ///            {
+        ///                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        ///            }
+        ///            @ClassName@Model @ClassNameLower@ = _db.Find(e =&gt; e.@PrimaryKey@ == @KeyVal@).FirstOrDefault();
+        ///            if (@ClassNameLower@ == null)
+        ///            {
+        ///                return HttpNotFound();
+        ///            }
+        ///            return View(@ClassNameLower@);
+        ///        }
+        ///
+        ///        [HttpPost]
+        ///        public ActionResu [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
     }

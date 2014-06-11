@@ -1,6 +1,7 @@
 ﻿using DbGenLibrary.IO;
 using DbGenLibrary.Properties;
 using DbGenLibrary.SchemaExtend;
+using DbGenLibrary.Text;
 
 namespace DbGenLibrary.SolutionGen.MVC
 {
@@ -13,12 +14,22 @@ namespace DbGenLibrary.SolutionGen.MVC
             if (table.PrimaryKey != null)
             {
                 var key = table.PrimaryKey;
+                var nullType = GetNullType(key.Type);
 
-                string details = ""; string edit = "";
-                string delete = "";
+
+
+                string details = MvcControllerResources.Details.WithIndent(2);
+                string edit = MvcControllerResources.Edit.WithIndent(2);
+                string delete = MvcControllerResources.Delete.WithIndent(2);
                 ctl = ctl.Replace("@Details@", details);
                 ctl = ctl.Replace("@Edit@", edit);
                 ctl = ctl.Replace("@Delete@", delete);
+
+
+
+                ctl = ctl.Replace("@KeyType?@", nullType);
+                ctl = ctl.Replace("@PrimaryKey@", key.PropertyText);
+                ctl = ctl.Replace("@KeyVal@", nullType.Contains("?") ? "id.Value" : "id");
             }
             else
             {
@@ -31,6 +42,18 @@ namespace DbGenLibrary.SolutionGen.MVC
             ctl = ctl.Replace("@ClassName@", table.ClassText);
             ctl = ctl.Replace("@ClassNameLower@", table.ClassText.ToLower());
             return new TextFile(ctl, string.Format("{0}Controller.cs", table.ClassText));
+        }
+
+
+        static string GetNullType(string type)
+        {
+            switch (type)
+            {
+                case "string":
+                    return type;
+                default:
+                    return type + "?";
+            }
         }
     }
 }

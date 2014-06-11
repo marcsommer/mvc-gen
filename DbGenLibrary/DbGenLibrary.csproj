@@ -169,6 +169,7 @@
     <EmbeddedResource Include="Properties\MvcResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MvcResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\MvcViewsResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

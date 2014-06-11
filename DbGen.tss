@@ -5,19 +5,19 @@
       <string>DbGenLibrary</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\Model.cs</string>
+      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\solutiongen\mvc\model.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\Controller.cs</string>
+      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\solutiongen\mvc\controller.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\Views.cs</string>
+      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\solutiongen\mvc\views.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\MvcProject.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SchemaExtend\MapTable.cs</string>
+      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\schemaextend\maptable.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -1,34 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - @WebTitle@</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                @Html.ActionLink("Trang chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Index", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-@*                    Chèn menu vào chỗ này*@
-                    <li>@Html.ActionLink("Employees", "Index", "Employees")</li>
-@*                    <li>@Html.ActionLink("About", "About", "Home")</li>*@
-@*                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+			 <div class="navbar-header">
+                <a data-toggle="dropdown" role="button" class="navbar-brand" href="#">Menu<b class="caret"></b></a>
+                <ul class=" dropdown-menu" role="menu" aria-labelledby="dLabel">
+@ActionLink@
                 </ul>
             </div>
+
+
+
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-@*            Chèn footer vào chỗ này*@
-            <p>&copy; @DateTime.Now.Year - Website MVC tự động sinh code</p>
+            <p>&copy; @DateTime.Now.Year - @Author@</p>
         </footer>
     </div>
 

@@ -22,6 +22,7 @@ namespace DbGenLibrary.SolutionGen.MVC
             GenPageConfig(folder, info);
             GenWebConfig(folder, info);
             GenCommonViews(folder, info);
+            GenLayout(folder, info);
 
             GenCsProj(folder, info);
             GenPackages(folder, info);
@@ -100,7 +101,7 @@ namespace DbGenLibrary.SolutionGen.MVC
                 actionLink.AppendLine(string.Format("<li>@Html.ActionLink(\"{0}\", \"Index\", \"{1}\")</li>", tb.ClassLabel, tb.ClassText).WithIndent(1));
             }
             homeIndexcshtml = homeIndexcshtml.Replace("@ActionLink@", actionLink.ToString());
-            
+
             folder["Views"]["Home"].Files.Add(new TextFile(homeIndexcshtml, string.Format("Index.cshtml")));
 
 
@@ -108,11 +109,27 @@ namespace DbGenLibrary.SolutionGen.MVC
             folder["Controllers"].Files.Add(new TextFile(MvcResources.HomeController, string.Format("HomeController.cs")));
         }
 
+        private static void GenLayout(ProjectFolder folder, GenInfo info)
+        {
+
+            //view
+            string layoutcshtml = MvcResources._Layoutcshtml
+                .Replace("@WebTitle@", info.ProjectTitle)
+                .Replace("@Author@", info.Author);
+            var actionLink = new StringBuilder();
+            foreach (MapTable tb in info.Tables.Where(t => t.Display))
+            {
+                actionLink.AppendLine(string.Format("<li>@Html.ActionLink(\"{0}\", \"Index\", \"{1}\")</li>", tb.ClassLabel, tb.ClassText).WithIndent(5));
+            }
+            layoutcshtml = layoutcshtml.Replace("@ActionLink@", actionLink.ToString());
+            folder["Views"]["Shared"].Files.Add(new TextFile(layoutcshtml, "_Layout.cshtml"));
+        }
+
         private static void GenCommonViews(ProjectFolder folder, GenInfo info)
         {
             folder["Views"].Files.Add(new TextFile(MvcResources.Webconfig_View, "Web.config"));
             folder["Views"].Files.Add(new TextFile(MvcResources._ViewStartcshtml, "_ViewStart.cshtml"));
-            folder["Views"]["Shared"].Files.Add(new TextFile(MvcResources._Layoutcshtml, "_Layout.cshtml"));
+
             folder["Views"]["Shared"].Files.Add(new TextFile(MvcResources.Errorcshtml, "Error.cshtml"));
         }
 
