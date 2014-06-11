@@ -2,22 +2,13 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>DbGenLibrary</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\solutiongen\mvc\model.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\solutiongen\mvc\controller.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\solutiongen\mvc\views.cs</string>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\Properties\..\Resources\_Layoutcshtml.txt</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\MvcProject.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\users\newsk_000\desktop\mvc-gen\dbgenlibrary\schemaextend\maptable.cs</string>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGen\FrmControl.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
