@@ -33,10 +33,9 @@ namespace @NameSpace@.Repository
             return _dataContext.GetTable<T>().Delete(predicate);
         }
 
-        public int Insert(T entity)
+        public object Insert(T entity)
         {
-            object rs = _dataContext.InsertWithIdentity(entity);
-            return Convert.ToInt32(rs.ToString());
+            return _dataContext.InsertWithIdentity(entity);
         }
 
         public int Update(T entity)

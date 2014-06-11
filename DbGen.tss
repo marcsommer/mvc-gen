@@ -1,2 +1,23 @@
 <?xml version="1.0"?>
-<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>DbGenLibrary</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\Model.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\Controller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\Views.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\MvcProject.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SchemaExtend\MapTable.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

@@ -97,11 +97,10 @@ namespace DbGenLibrary.SolutionGen.MVC
             var actionLink = new StringBuilder();
             foreach (MapTable tb in info.Tables.Where(t => t.Display))
             {
-                actionLink.AppendLine(string.Format("<li>@Html.ActionLink(\"{0}\", \"Index\", \"{1}\")</li>", tb.ClassText, tb.ClassLabel).WithIndent(1));
+                actionLink.AppendLine(string.Format("<li>@Html.ActionLink(\"{0}\", \"Index\", \"{1}\")</li>", tb.ClassLabel, tb.ClassText).WithIndent(1));
             }
             homeIndexcshtml = homeIndexcshtml.Replace("@ActionLink@", actionLink.ToString());
-
-
+            
             folder["Views"]["Home"].Files.Add(new TextFile(homeIndexcshtml, string.Format("Index.cshtml")));
 
 
