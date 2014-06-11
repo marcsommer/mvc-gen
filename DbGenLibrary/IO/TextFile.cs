@@ -6,7 +6,8 @@ namespace DbGenLibrary.IO
     {
         public override byte[] GetContent()
         {
-            return Encoding.UTF8.GetBytes(Text);
+            var encoding = new UTF8Encoding(true);
+            return encoding.GetBytes(Text);
         }
 
          TextFile()
