@@ -29,7 +29,7 @@ namespace DbGenLibrary.SchemaExtend
         public MapColumn(SchemaColumn col)
             : this()
         {
-            Display = !col.IsIdentity;
+            Display = !col.IsIdentity && !col.Type.Equals("byte[]");
 
             ColumnName = col.ColumnName;
             IsNullable = col.IsNullable;

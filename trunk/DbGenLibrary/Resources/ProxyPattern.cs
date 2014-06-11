@@ -47,7 +47,7 @@ namespace @NameSpace@.Services
             return Provider.MassDelete(predicate);
         }
 
-        public int Insert(@ClassName@ entity)
+        public object Insert(@ClassName@ entity)
         {
             //validate & log...
             //.......

@@ -10,11 +10,11 @@ namespace DbGenLibrary.SolutionGen.MVC
         {
             var ctl = MvcControllerResources.Controller;
 
-            if (false)// table.PrimaryKey != null)
+            if (table.PrimaryKey != null)
             {
                 var key = table.PrimaryKey;
 
-                string details = "";string edit = "";
+                string details = ""; string edit = "";
                 string delete = "";
                 ctl = ctl.Replace("@Details@", details);
                 ctl = ctl.Replace("@Edit@", edit);
