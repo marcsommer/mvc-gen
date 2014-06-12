@@ -18,6 +18,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.@PrimaryKey@ }) |
     @Html.ActionLink("Trở về trang chủ", "Index")
 </p>

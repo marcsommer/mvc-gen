@@ -10,11 +10,11 @@
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                @Html.ActionLink("Index", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Trang chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
 			 <div class="navbar-header">
-                <a data-toggle="dropdown" role="button" class="navbar-brand" href="#">Menu<b class="caret"></b></a>
+                <a data-toggle="dropdown" role="button" class="navbar-brand" href="#">Điều hướng<b class="caret"></b></a>
                 <ul class=" dropdown-menu" role="menu" aria-labelledby="dLabel">
 @ActionLink@
                 </ul>

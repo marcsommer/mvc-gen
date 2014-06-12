@@ -1,14 +1,2 @@
 <?xml version="1.0"?>
-<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ArrayOfArrayOfString>
-    <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\Properties\..\Resources\_Layoutcshtml.txt</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGenLibrary\SolutionGen\MVC\MvcProject.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Users\newsk_000\Desktop\mvc-gen\DbGen\FrmControl.cs</string>
-    </ArrayOfString>
-  </ArrayOfArrayOfString>
-</ArrayOfArrayOfArrayOfString>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

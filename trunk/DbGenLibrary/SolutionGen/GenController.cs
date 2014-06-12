@@ -3,6 +3,7 @@ using DbGenLibrary.Properties;
 using DbGenLibrary.SchemaExtend;
 using DbGenLibrary.SolutionGen.BusinessLogic;
 using DbGenLibrary.SolutionGen.MVC;
+using DbGenLibrary.SolutionGen.SQL;
 
 namespace DbGenLibrary.SolutionGen
 {
@@ -26,12 +27,13 @@ namespace DbGenLibrary.SolutionGen
 
             var blToolkit4 = BusinessLogicResources.BLToolkit_4;
             folder.Files.Add(new BinaryFile(blToolkit4, "BLToolkit.4.dll"));
-            
+
 
             return folder;
         }
         static ProjectFolder GenBusinessLogicProject(GenInfo genInfo)
-        {var folder = GenBusinessLogicFolder(genInfo);
+        {
+            var folder = GenBusinessLogicFolder(genInfo);
             CsProject.GenBllProjectStructure(folder, genInfo);
             return folder;
         }
@@ -43,7 +45,7 @@ namespace DbGenLibrary.SolutionGen
 
             folder["packages"].Files.Add(new TextFile(MvcResources.repositories, "repositories.config"));
 
-            
+
             folder.Folders.Add(GenBusinessLogicProject(genInfo));
             var mvcFolder = folder[string.Format("{0}MVC", genInfo.NameSpace)];
             MvcProject.GenMvcProjectStructure(mvcFolder, genInfo);
@@ -51,6 +53,11 @@ namespace DbGenLibrary.SolutionGen
             folder.Replace("@NameSpace@", string.Format("{0}", genInfo.NameSpace));
 
             return folder;
+        }
+
+        public static TextFile GenSqlScript(GenInfo info)
+        {
+            return SqlScript.GenSqlScript(info);
         }
     }
 }

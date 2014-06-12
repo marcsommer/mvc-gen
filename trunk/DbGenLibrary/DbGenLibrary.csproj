@@ -142,6 +142,7 @@
     <Compile Include="SolutionGen\MVC\Model.cs" />
     <Compile Include="SolutionGen\MVC\MvcProject.cs" />
     <Compile Include="SolutionGen\MVC\Views.cs" />
+    <Compile Include="SolutionGen\SQL\SqlScript.cs" />
     <Compile Include="SqlSchema\AssociationType.cs" />
     <Compile Include="SqlSchema\SchemaColumn.cs" />
     <Compile Include="SqlSchema\SchemaForeignKey.cs" />
@@ -172,6 +173,7 @@
     <EmbeddedResource Include="Properties\MvcViewsResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MvcViewsResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\MvcModelResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

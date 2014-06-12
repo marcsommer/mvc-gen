@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using DbGenLibrary.CSharp;
 
 namespace DbGenLibrary.IO
@@ -48,8 +49,11 @@ namespace DbGenLibrary.IO
                 folder.Write(dir.FullName);
             foreach (ProjectFile file in Files)
             {
-                File.WriteAllBytes(string.Format("{0}\\{1}", dir.FullName, file.FileName), file.GetContent());
-            }
+                if (file is TextFile)
+                    File.WriteAllText(string.Format("{0}\\{1}", dir.FullName, file.FileName), (file as TextFile).Text, Encoding.UTF8);
+                else
+                    File.WriteAllBytes(string.Format("{0}\\{1}", dir.FullName, file.FileName), file.GetContent());
+                }
         }
 
 

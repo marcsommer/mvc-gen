@@ -20,6 +20,13 @@ namespace DbGenLibrary.SchemaExtend
         public bool IsPrimaryKey
         {
             get { return PkIndex >= 0; }
+            set
+            {
+                if (value)
+                    PkIndex = 0;
+                else
+                    PkIndex = -1;
+            }
         }
 
         public MapColumn()

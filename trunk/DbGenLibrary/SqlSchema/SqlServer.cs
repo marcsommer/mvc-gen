@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using DbGenLibrary.SqlSchema;
+using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Smo.Wmi;
 
 namespace DbGenLibrary.SQL
 {
     public class SqlServer : SqlInformation
     {
-        public SqlConnectionStringBuilder Builder { get; set; }
         public SqlServer(SqlConnectionStringBuilder cnnBuilder)
         {
             Builder = cnnBuilder;
         }
+
+        public SqlConnectionStringBuilder Builder { get; set; }
 
         /// <summary>
         ///     lấy tất cả các thể hiện SQL trong máy
@@ -23,7 +26,7 @@ namespace DbGenLibrary.SQL
         /// <returns>danh sách các thể hiện</returns>
         public static List<string> GetLocalInstances()
         {
-            var ls = new ManagedComputer().ServerInstances
+            List<string> ls = new ManagedComputer().ServerInstances
                 .Cast<ServerInstance>()
                 .Select(instance => String.IsNullOrEmpty(instance.Name)
                     ? instance.Parent.Name
@@ -53,7 +56,7 @@ namespace DbGenLibrary.SQL
             }
         }
 
-        public  List<string> Databases()
+        public List<string> Databases()
         {
             using (var connection = new SqlConnection(Builder.ConnectionString))
             {
@@ -70,8 +73,26 @@ namespace DbGenLibrary.SQL
             }
         }
 
+        public void ExecuteSql(string sql)
+        {
+            using (var connection = new SqlConnection(Builder.ConnectionString))
+            {
+                /*
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
 
-        protected override void GetSchema(out List<SchemaTable> tables,out  List<SchemaColumn> columns )
+                */
+
+                Server server = new Server(new ServerConnection(connection));
+
+                server.ConnectionContext.ExecuteNonQuery(sql);
+           }
+        }
+
+        protected override void GetSchema(out List<SchemaTable> tables, out List<SchemaColumn> columns)
         {
             tables = GetTables();
             columns = GetColumns();
@@ -289,7 +310,5 @@ namespace DbGenLibrary.SQL
                 }
             }
         }
-
-
     }
 }

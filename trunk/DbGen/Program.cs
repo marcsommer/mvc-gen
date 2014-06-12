@@ -22,14 +22,9 @@ namespace DbGen
             BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            //Application.Run(new frmCauHinhKetNoi());
 
-            var fKetNoi = new FrmConfig();
-            if (fKetNoi.ShowDialog() == DialogResult.OK)
-            {
-                var f = new FrmControl(fKetNoi.SqlConnectionStringBuilder);
-                f.ShowDialog();
-            }
+            var fwelcome = new FrmWelcom();
+            fwelcome.ShowDialog();
         }
     }
 }

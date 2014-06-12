@@ -3,11 +3,11 @@
 @model PagedList.IPagedList<@ClassName@Model>
 
 @{
-    ViewBag.Title = "Trang chủ ";
+    ViewBag.Title = "Xem danh sách @ClassLabel@";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Trang chủ</h2>
+<h2>Xem danh sách @ClassLabel@</h2>
 <hr />
 <p>
     @Html.ActionLink("Tạo mới", "Create")
@@ -25,15 +25,10 @@
     @foreach (@ClassName@Model item in Model)
     {
         <tr>
-
 @RenderColumsDisplay@	
-
-
             <td>
 			
 @RenderActions@				
-
-				
             </td>
         </tr>
     }

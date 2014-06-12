@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Windows.Forms;
 using DbGen.SplashForm;
 using DbGenLibrary.SchemaExtend;
@@ -184,8 +185,11 @@ namespace DbGen
             {
                 if (_genInfo == null)
                     throw new Exception("Xin vui lòng chọn cơ sở dữ liệu!");
-                GenController.GenBusinessLogic(_genInfo).Write(txtTargetFolder.Text);
-                XtraMessageBox.Show("OK!");
+                var folder = GenController.GenBusinessLogic(_genInfo);
+                folder.Write(txtTargetFolder.Text);
+                if (XtraMessageBox.Show("Bạn có muốn mở thư mục vừa được sinh ra?", "Hoàn tất", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    Process.Start(string.Format("{0}\\{1}", txtTargetFolder.Text, folder.Name));
+
             }
             catch (Exception exception)
             {
@@ -195,16 +199,20 @@ namespace DbGen
         }
         void GenMvcSolution()
         {
-             try
+            try
             {
                 if (_genInfo == null)
                     throw new Exception("Xin vui lòng chọn cơ sở dữ liệu!");
-                GenController.GenMvcSolution(_genInfo).Write(txtTargetFolder.Text);
-                XtraMessageBox.Show("OK!");
+
+                var folder = GenController.GenMvcSolution(_genInfo);
+                folder.Write(txtTargetFolder.Text);
+                if (XtraMessageBox.Show("Bạn có muốn mở thư mục vừa được sinh ra?", "Hoàn tất", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    Process.Start(string.Format("{0}\\{1}", txtTargetFolder.Text, folder.Name));
+
             }
-              catch (Exception exception)
+            catch (Exception exception)
             {
-                    XtraMessageBox.Show(exception.Message);
+                XtraMessageBox.Show(exception.Message);
             }
 
         }

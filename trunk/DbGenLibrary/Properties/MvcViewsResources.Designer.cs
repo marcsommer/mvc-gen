@@ -211,7 +211,7 @@ namespace DbGenLibrary.Properties {
         ///&lt;hr/&gt;
         ///
         ///
-        ///&lt;h4&gt;Các chức năng chính&lt;/h4&gt;
+        ///&lt;h4&gt;Danh sách chức năng đã được tự động sinh:&lt;/h4&gt;
         ///&lt;ol&gt;
         ///
         ///@ActionLink@
@@ -227,8 +227,8 @@ namespace DbGenLibrary.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @Html.ActionLink(&quot; &quot;, &quot;Edit&quot;, new { id = item.@PrimaryKey@ }, new { @class = &quot;glyphicon glyphicon-pencil text-warning&quot; }) |
-        ///                @Html.ActionLink(&quot; &quot;, &quot;Details&quot;, new { id = item.@PrimaryKey@ }, new { @class = &quot;glyphicon glyphicon-eye-open text-success&quot; })|
+        ///   Looks up a localized string similar to @Html.ActionLink(&quot; &quot;, &quot;Edit&quot;, new { id = item.@PrimaryKey@ }, new { @class = &quot;glyphicon glyphicon-pencil text-warning&quot; }) 
+        ///                @Html.ActionLink(&quot; &quot;, &quot;Details&quot;, new { id = item.@PrimaryKey@ }, new { @class = &quot;glyphicon glyphicon-eye-open text-success&quot; })
         ///                @Html.ActionLink(&quot; &quot;, &quot;Delete&quot;, new { id = item.@PrimaryKey@, page = Model.PageNumber }, new { @class = &quot;glyphicon glyphicon-remove text-danger&quot;, onclick = &quot;return confirm(&apos;Bạn có muốn xóa dòng này?&apos;)&quot; }).
         /// </summary>
         internal static string Index_RenderActions {
@@ -265,16 +265,16 @@ namespace DbGenLibrary.Properties {
         ///@model PagedList.IPagedList&lt;@ClassName@Model&gt;
         ///
         ///@{
-        ///    ViewBag.Title = &quot;Trang chủ &quot;;
+        ///    ViewBag.Title = &quot;Xem danh sách @ClassLabel@&quot;;
         ///    Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;
         ///}
         ///
-        ///&lt;h2&gt;Trang chủ&lt;/h2&gt;
+        ///&lt;h2&gt;Xem danh sách @ClassLabel@&lt;/h2&gt;
         ///&lt;hr /&gt;
         ///&lt;p&gt;
         ///    @Html.ActionLink(&quot;Tạo mới&quot;, &quot;Create&quot;)
         ///&lt;/p&gt;
-        ///&lt;table class=&quot;table table-bordered table-hover table-striped&quot;&gt;
+        ///&lt;table class=&quot;table-bordered table-hover table-striped&quot;&gt;
         ///    &lt;tr&gt;
         ///
         ///@RenderColumsDisplayName@	
@@ -287,10 +287,7 @@ namespace DbGenLibrary.Properties {
         ///    @foreach (@ClassName@Model item in Model)
         ///    {
         ///        &lt;tr&gt;
-        ///
-        ///@RenderColumsDisplay@	
-        ///
-        /// [rest of string was truncated]&quot;;.
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Indexcshtml {
             get {
