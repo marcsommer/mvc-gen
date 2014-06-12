@@ -12,19 +12,19 @@ namespace DbGenLibrary.SolutionGen.SQL
         {
             string sql = "";
             sql += string.Format(@"USE master
-                    go
-                    IF  EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'{0}')
-                    DROP DATABASE [{0}]
-                    go
-                    CREATE DATABASE [{0}];
-                    go
-                    USE [{0}];
-                    go" + "\n", info.NameSpace);
+go
+IF  EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'{0}')
+DROP DATABASE [{0}]
+go
+CREATE DATABASE [{0}];
+go
+USE [{0}];
+go" + "\n", info.NameSpace);
             sql += string.Join("\n\n", info.Tables.Select(GetTableStament));
             return new TextFile(sql, string.Format("{0}.sql", info.NameSpace));
         }
 
-        static string GetTableStament(MapTable table)
+        private static string GetTableStament(MapTable table)
         {
             string result = "";
             result += string.Format("CREATE TABLE [{0}](\n", table.TableName);
@@ -32,7 +32,8 @@ namespace DbGenLibrary.SolutionGen.SQL
             result += "\n);\n";
             return result;
         }
-        static string GetColumnStament(MapColumn column)
+
+        private static string GetColumnStament(MapColumn column)
         {
             string result = "";
             result += string.Format("[{0}]", column.ColumnName);

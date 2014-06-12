@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DbGenLibrary.CSharp
+﻿namespace DbGenLibrary.CSharp
 {
-    interface ICsharpComponent
+    internal interface ICsharpComponent
     {
         string Name { get; set; }
         string Modifier { get; set; }

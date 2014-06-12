@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using DbGen.Properties;
 using DbGenLibrary.SchemaExtend;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 
 namespace DbGen.ModelForm
 {
     public partial class FrmObject : XtraForm
     {
-
         public FrmObject()
         {
             InitializeComponent();
@@ -19,15 +20,16 @@ namespace DbGen.ModelForm
 
             Columns = new BindingList<MapColumn>
             {
-                new MapColumn() {ColumnName = "ID", IsNullable = false, IsPrimaryKey = true, Type = "int"}, 
-                new MapColumn() {ColumnName = "Name", IsNullable = false, IsPrimaryKey = false, Type = "string"}
+                new MapColumn {ColumnName = "ID", IsNullable = false, IsPrimaryKey = true, Type = "int"},
+                new MapColumn {ColumnName = "Name", IsNullable = false, IsPrimaryKey = false, Type = "string"}
             };
         }
 
         public BindingList<MapColumn> Columns { get; set; }
+
         private void gridView_InitNewRow(object sender, InitNewRowEventArgs e)
         {
-          //  gridView.SetRowCellValue(e.RowHandle, "ColumnName", string.Format("Property{0}", Columns.Count + 1));
+            //  gridView.SetRowCellValue(e.RowHandle, "ColumnName", string.Format("Property{0}", Columns.Count + 1));
             gridView.SetRowCellValue(e.RowHandle, "IsNullable", true);
             gridView.SetRowCellValue(e.RowHandle, "Type", "string");
             gridView.SetRowCellValue(e.RowHandle, "IsPrimaryKey", false);
@@ -39,7 +41,7 @@ namespace DbGen.ModelForm
         }
 
 
-        private void gridView_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        private void gridView_RowUpdated(object sender, RowObjectEventArgs e)
         {
             if ((e.Row as MapColumn) != null && (e.Row as MapColumn).IsPrimaryKey)
             {
@@ -47,7 +49,7 @@ namespace DbGen.ModelForm
                 {
                     if (index != e.RowHandle)
                     {
-                        var column = Columns[index];
+                        MapColumn column = Columns[index];
                         column.IsPrimaryKey = false;
                     }
                 }
@@ -61,8 +63,8 @@ namespace DbGen.ModelForm
             {
                 try
                 {
-                    var rows = gridView.GetSelectedRows().Select(r => Columns[r]);
-                    foreach (var row in rows)
+                    IEnumerable<MapColumn> rows = gridView.GetSelectedRows().Select(r => Columns[r]);
+                    foreach (MapColumn row in rows)
                     {
                         Columns.Remove(row);
                     }
@@ -70,11 +72,8 @@ namespace DbGen.ModelForm
                 }
                 catch (Exception)
                 {
-
                 }
-
             }
         }
-
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DbGenLibrary.SchemaExtend;
-using DbGenLibrary.SQL;
 
 namespace DbGenLibrary.SqlSchema
 {
@@ -33,14 +32,14 @@ namespace DbGenLibrary.SqlSchema
         {
             for (int i = 0; i < tables.Count; i++)
             {
-                var table = tables[i];
+                SchemaTable table = tables[i];
                 for (int j = 0; j < table.ForeignKeys.Values.Count; j++)
                 {
-                    var fk = table.ForeignKeys.Values.ToList()[j];
+                    SchemaForeignKey fk = table.ForeignKeys.Values.ToList()[j];
                     if (fk.Checked)
                         continue;
-                    var name = fk.KeyName + "_BackReference";
-                    fk.OtherTable.ForeignKeys.Add(name, fk.BackReference = new SchemaForeignKey()
+                    string name = fk.KeyName + "_BackReference";
+                    fk.OtherTable.ForeignKeys.Add(name, fk.BackReference = new SchemaForeignKey
                     {
                         KeyName = fk.KeyName + "_BackReference",
                         MemberName = fk.MemberName + "_BackReference",
@@ -52,15 +51,14 @@ namespace DbGenLibrary.SqlSchema
                     });
                 }
             }
-
         }
 
 
         protected void CompleteAssociationType(List<SchemaTable> tables)
         {
-            foreach (var t in tables)
+            foreach (SchemaTable t in tables)
             {
-                foreach (var key in t.ForeignKeys.Values)
+                foreach (SchemaForeignKey key in t.ForeignKeys.Values)
                 {
                     if (key.BackReference != null && key.AssociationType == AssociationType.Auto)
                     {

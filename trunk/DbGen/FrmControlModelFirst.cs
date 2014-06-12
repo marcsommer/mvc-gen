@@ -30,7 +30,7 @@ namespace DbGen
 
         private GenType GenType
         {
-            get { return (GenType)Enum.Parse(typeof(GenType), rdGenType.EditValue.ToString(), true); }
+            get { return (GenType) Enum.Parse(typeof (GenType), rdGenType.EditValue.ToString(), true); }
         }
 
 
@@ -75,7 +75,7 @@ namespace DbGen
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(SplashScreenLoading));
+            SplashScreenManager.ShowForm(typeof (SplashScreenLoading));
             try
             {
                 UpdateGenInfo();
@@ -121,7 +121,6 @@ namespace DbGen
         {
             try
             {
-
                 _genInfo.PageSize = tbPageSize.Value;
                 _genInfo.DbName = txtNameSpace.Text;
 
@@ -267,6 +266,11 @@ namespace DbGen
                 default:
                     break;
             }
+        }
+
+        private void iExit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

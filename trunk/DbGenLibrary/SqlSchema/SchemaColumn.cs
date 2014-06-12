@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 namespace DbGenLibrary.SqlSchema
 {
-    public class SchemaColumn{
+    public class SchemaColumn
+    {
         public SchemaColumn()
         {
             PkIndex = -1;

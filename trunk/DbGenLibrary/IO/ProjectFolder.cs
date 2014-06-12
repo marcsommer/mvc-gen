@@ -26,7 +26,7 @@ namespace DbGenLibrary.IO
                 ProjectFolder folder = Folders.Find(f => f.Name == folderName);
                 if (folder == null)
                 {
-                    folder = new ProjectFolder { Name = folderName };
+                    folder = new ProjectFolder {Name = folderName};
                     Folders.Add(folder);
                 }
                 return folder;
@@ -53,7 +53,7 @@ namespace DbGenLibrary.IO
                     File.WriteAllText(string.Format("{0}\\{1}", dir.FullName, file.FileName), (file as TextFile).Text, Encoding.UTF8);
                 else
                     File.WriteAllBytes(string.Format("{0}\\{1}", dir.FullName, file.FileName), file.GetContent());
-                }
+            }
         }
 
 
@@ -71,12 +71,12 @@ namespace DbGenLibrary.IO
 
         public void Replace(string old, string newString)
         {
-            foreach (var file in Files.OfType<TextFile>())
+            foreach (TextFile file in Files.OfType<TextFile>())
             {
                 file.Text = file.Text.Replace(old, newString);
             }
 
-            foreach (var file in Files.OfType<NameSpace>())
+            foreach (NameSpace file in Files.OfType<NameSpace>())
             {
                 for (int index = 0; index < file.Using.Count; index++)
                 {
@@ -84,7 +84,7 @@ namespace DbGenLibrary.IO
                 }
             }
 
-            foreach (var folder in Folders)
+            foreach (ProjectFolder folder in Folders)
             {
                 folder.Replace(old, newString);
             }

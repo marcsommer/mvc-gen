@@ -7,7 +7,7 @@ namespace DbGenLibrary.CSharp
 {
     public class Class : ITextWriteable, ICsharpComponent
     {
-        Class()
+        private Class()
         {
             Modifier = "public partial";
             Properties = new List<Property>();
@@ -23,12 +23,12 @@ namespace DbGenLibrary.CSharp
         }
 
         public Attribute Attribute { get; set; }
-        public string Name { get; set; }
-        public string Modifier { get; set; }
         public List<Property> Properties { get; set; }
         public List<string> Bases { get; set; }
         public List<Class> Classes { get; set; }
         public string Extend { get; set; }
+        public string Name { get; set; }
+        public string Modifier { get; set; }
 
 
         public string GetText(int indentLevel)
@@ -47,7 +47,7 @@ namespace DbGenLibrary.CSharp
                 s.Append(property.GetText(indentLevel + 1));
             }
 
-            foreach (var Class in Classes)
+            foreach (Class Class in Classes)
             {
                 s.AppendLine(Class.GetText(indentLevel + 1));
             }

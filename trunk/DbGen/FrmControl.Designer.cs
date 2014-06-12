@@ -193,6 +193,7 @@
             this.iExit.Caption = "&Thoát";
             this.iExit.Id = 9;
             this.iExit.Name = "iExit";
+            this.iExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iExit_ItemClick);
             // 
             // mHelp
             // 

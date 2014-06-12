@@ -1,13 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
 using DbGen.SplashForm;
+using DbGenLibrary.IO;
 using DbGenLibrary.SchemaExtend;
 using DbGenLibrary.SolutionGen;
-using DbGenLibrary.SolutionGen.BusinessLogic;
 using DbGenLibrary.SQL;
-using DbGenLibrary.SqlSchema;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
@@ -17,6 +17,7 @@ namespace DbGen
     public partial class FrmControl : XtraForm
     {
         private readonly SqlServer _server;
+        private GenInfo _genInfo;
 
         public FrmControl()
         {
@@ -30,11 +31,16 @@ namespace DbGen
             RefreshDbList();
             txtAuthor.Text = Environment.UserName;
             txtTargetFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\output";
-
         }
+
+        private GenType GenType
+        {
+            get { return (GenType) Enum.Parse(typeof (GenType), rdGenType.EditValue.ToString(), true); }
+        }
+
         private void RefreshDbList()
         {
-            var dataSource = _server.Databases();
+            List<string> dataSource = _server.Databases();
             cmbDatabases.Properties.Items.Clear();
             cmbDatabases.Properties.Items.AddRange(dataSource);
         }
@@ -49,10 +55,9 @@ namespace DbGen
             RefreshDbList();
         }
 
-        private GenInfo _genInfo;
         private void cmbDatabases_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(SplashScreenLoading));
+            SplashScreenManager.ShowForm(typeof (SplashScreenLoading));
             try
             {
                 _server.Builder.InitialCatalog = cmbDatabases.SelectedText;
@@ -62,7 +67,6 @@ namespace DbGen
                 gridControlTables.DataSource = _genInfo.Tables;
                 gridViewTables.BestFitColumns();
                 txtNameSpace.Text = txtTitle.Text = _genInfo.NameSpace;
-
             }
             catch (Exception exception)
             {
@@ -73,7 +77,7 @@ namespace DbGen
 
         public MapTable GetSelectedTable()
         {
-            var i = gridViewTables.GetSelectedRows()[0];
+            int i = gridViewTables.GetSelectedRows()[0];
             var obj = gridViewTables.GetRow(i) as MapTable;
             return obj;
         }
@@ -84,8 +88,8 @@ namespace DbGen
             {
                 try
                 {
-                    var table = GetSelectedTable();
-                    var dataSource = table.Columns;
+                    MapTable table = GetSelectedTable();
+                    List<MapColumn> dataSource = table.Columns;
                     gridControlColumns.DataSource = dataSource;
                     gridViewColumns.BestFitColumns();
                 }
@@ -138,14 +142,6 @@ namespace DbGen
             }
         }
 
-        GenType GenType
-        {
-            get
-            {
-                return (GenType)Enum.Parse(typeof(GenType), rdGenType.EditValue.ToString(), true);
-            }
-        }
-
         private void btnExecute_Click(object sender, EventArgs e)
         {
             UpdateGenInfo();
@@ -162,7 +158,7 @@ namespace DbGen
             }
         }
 
-        void UpdateGenInfo()
+        private void UpdateGenInfo()
         {
             try
             {
@@ -173,50 +169,48 @@ namespace DbGen
             }
             catch
             {
-
             }
-
         }
 
 
-        void GenLibraryOnly()
+        private void GenLibraryOnly()
         {
             try
             {
                 if (_genInfo == null)
                     throw new Exception("Xin vui lòng chọn cơ sở dữ liệu!");
-                var folder = GenController.GenBusinessLogic(_genInfo);
+                ProjectFolder folder = GenController.GenBusinessLogic(_genInfo);
                 folder.Write(txtTargetFolder.Text);
                 if (XtraMessageBox.Show("Bạn có muốn mở thư mục vừa được sinh ra?", "Hoàn tất", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     Process.Start(string.Format("{0}\\{1}", txtTargetFolder.Text, folder.Name));
-
             }
             catch (Exception exception)
             {
                 XtraMessageBox.Show(exception.Message);
             }
-
         }
-        void GenMvcSolution()
+
+        private void GenMvcSolution()
         {
             try
             {
                 if (_genInfo == null)
                     throw new Exception("Xin vui lòng chọn cơ sở dữ liệu!");
 
-                var folder = GenController.GenMvcSolution(_genInfo);
+                ProjectFolder folder = GenController.GenMvcSolution(_genInfo);
                 folder.Write(txtTargetFolder.Text);
                 if (XtraMessageBox.Show("Bạn có muốn mở thư mục vừa được sinh ra?", "Hoàn tất", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     Process.Start(string.Format("{0}\\{1}", txtTargetFolder.Text, folder.Name));
-
             }
             catch (Exception exception)
             {
                 XtraMessageBox.Show(exception.Message);
             }
-
         }
 
-
+        private void iExit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

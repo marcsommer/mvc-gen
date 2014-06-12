@@ -15,7 +15,6 @@ namespace DbGen.SplashForm
         }
 
 
-
         private void SplashScreenLoadingMainForm_Load(object sender, EventArgs e)
         {
         }
