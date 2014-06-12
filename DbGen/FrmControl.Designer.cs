@@ -78,7 +78,6 @@
             this.colDisplayColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtTitle = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtAuthor = new DevExpress.XtraEditors.TextEdit();
@@ -559,7 +558,6 @@
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl2.Controls.Add(this.checkBox1);
             this.groupControl2.Controls.Add(this.txtTitle);
             this.groupControl2.Controls.Add(this.labelControl6);
             this.groupControl2.Controls.Add(this.txtAuthor);
@@ -578,16 +576,6 @@
             this.groupControl2.Size = new System.Drawing.Size(255, 453);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "Cấu hình";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(89, 225);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(117, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Tùy biến định danh";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // txtTitle
             // 
@@ -861,7 +849,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.FolderBrowserDialog dialogTargetFolder;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.CheckBox checkBox1;
         private DevExpress.XtraEditors.TextEdit txtAuthor;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TrackBarControl tbPageSize;

@@ -17,6 +17,8 @@ namespace DbGenLibrary.SchemaExtend
         public MapTable()
         {
             Display = true;
+            Columns = new List<MapColumn>();
+            ForeignKeys = new List<MapForeignKey>();
         }
 
         public MapTable(SchemaTable table)

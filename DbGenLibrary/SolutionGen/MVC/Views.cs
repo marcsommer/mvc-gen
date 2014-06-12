@@ -34,6 +34,8 @@ namespace DbGenLibrary.SolutionGen.MVC
             foreach (var column in table.Columns)
                 renderColums.AppendLine(col.Replace("@ColumnName@", column.PropertyText).WithIndent(2));
             createcshtml = createcshtml.Replace("@RenderColums@", renderColums.ToString());
+            if (table.PrimaryKey != null)
+                createcshtml = createcshtml.Replace("@PrimaryKey@", table.PrimaryKey.PropertyText);
             var f = new TextFile(createcshtml, "Details.cshtml");
             return f;
         }
@@ -56,7 +58,8 @@ namespace DbGenLibrary.SolutionGen.MVC
         public static TextFile IndexFor(MapTable table)
         {
             var createcshtml = MvcViewsResources.Indexcshtml
-                .Replace("@ClassName@", table.ClassText);
+                .Replace("@ClassName@", table.ClassText)
+                .Replace("@ClassLabel@", table.ClassLabel);
 
 
             var colHead = MvcViewsResources.Index_RenderColumsDisplayName;

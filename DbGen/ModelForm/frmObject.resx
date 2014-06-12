@@ -117,62 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Createcshtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Createcshtml.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Create_RenderColums" xml:space="preserve">
-    <value>&lt;div class="form-group"&gt;
-            @Html.LabelFor(model =&gt; model.@ColumnName@, new { @class = "control-label col-md-2" })
-            &lt;div class="col-md-10"&gt;
-                @Html.EditorFor(model =&gt; model.@ColumnName@, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model =&gt; model.@ColumnName@, "", new { @class = "text-danger" })
-            &lt;/div&gt;
-        &lt;/div&gt;</value>
-  </data>
-  <data name="Detailscshtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Detailscshtml.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Details_RenderColums" xml:space="preserve">
-    <value>&lt;dt&gt;
-            @Html.DisplayNameFor(model =&gt; model.@ColumnName@)
-        &lt;/dt&gt;
-
-        &lt;dd&gt;
-            @Html.DisplayFor(model =&gt; model.@ColumnName@)
-        &lt;/dd&gt;</value>
-  </data>
-  <data name="Editcshtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Editcshtml.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Edit_RenderColums" xml:space="preserve">
-    <value>&lt;div class="form-group"&gt;
-            @Html.LabelFor(model =&gt; model.@ColumnName@, new {@class = "control-label col-md-2"})
-            &lt;div class="col-md-10"&gt;
-                @Html.EditorFor(model =&gt; model.@ColumnName@, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model =&gt; model.@ColumnName@, "", new {@class = "text-danger"})
-            &lt;/div&gt;
-        &lt;/div&gt;</value>
-  </data>
-  <data name="Indexcshtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Indexcshtml.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Index_RenderActions" xml:space="preserve">
-    <value>@Html.ActionLink(" ", "Edit", new { id = item.@PrimaryKey@ }, new { @class = "glyphicon glyphicon-pencil text-warning" }) 
-                @Html.ActionLink(" ", "Details", new { id = item.@PrimaryKey@ }, new { @class = "glyphicon glyphicon-eye-open text-success" })
-                @Html.ActionLink(" ", "Delete", new { id = item.@PrimaryKey@, page = Model.PageNumber }, new { @class = "glyphicon glyphicon-remove text-danger", onclick = "return confirm('Bạn có muốn xóa dòng này?')" })</value>
-  </data>
-  <data name="Index_RenderColumsDisplay" xml:space="preserve">
-    <value>&lt;td&gt;
-                @Html.DisplayFor(modelItem =&gt; item.@ColumnName@)
-            &lt;/td&gt;</value>
-  </data>
-  <data name="Index_RenderColumsDisplayName" xml:space="preserve">
-    <value>&lt;th&gt;
-            @Html.DisplayNameFor(model =&gt; model.First().@ColumnName@)
-        &lt;/th&gt;</value>
-  </data>
-  <data name="HomeIndexcshtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomeIndexcshtml.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <metadata name="contextMenuGrid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAAMVzyWDFc8/wxXPP8MVzz/DFc8/wxXPP8MVzz/DFc8/wxXPP8MVzz/DFc8/wxXPP8MVzz/DFc8/wxX
+        PJb///8AEFs/////////////zMzM/////////////////8zMzP/////////////////MzMz/////////
+        //8QWz//////ABRgQ////////////8zMzP/////////////////MzMz/////////////////zMzM////
+        ////////FGBD/////wAZZUj/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zM
+        zP/MzMz/zMzM/xllSP////8AH2tN////////////zMzM/////////////////8zMzP//////////////
+        ///MzMz///////////8fa03/////ACVyU////////////8zMzP/////////////////MzMz/////////
+        ////////zMzM////////////JXJT/////wAreFj/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zM
+        zP/MzMz/zMzM/8zMzP/MzMz/zMzM/yt4WP////8AMX9e////////////zMzM/////////////////8zM
+        zP/////////////////MzMz///////////8xf17/////ADeGZP///////////8zMzP//////////////
+        ///MzMz/////////////////zMzM////////////N4Zk/////wA9jGn/zMzM/8zMzP/MzMz/zMzM/8zM
+        zP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/z2Maf////8AQ5Nv////////////zMzM////
+        /////////////8zMzP/////////////////MzMz///////////9Dk2//////AEmZdP///////////8zM
+        zP/////////////////MzMz/////////////////zMzM////////////SZl0/////wBOnnn/M4Ff/zOB
+        X/8zgV//M4Ff/zOBX/8zgV//M4Ff/zOBX/8zgV//M4Ff/zOBX/8zgV//M4Ff/06eef////8AUqN9/1an
+        gP9Wp4D/VqeA/1angP9Wp4D/VqeA/1angP9Wp4D/VqeA/1angP9Wp4D/VqeA/1angP9So33/////AFan
+        gP+ayrP/msqz/5rKs/+ayrP/msqz/5rKs/+ayrP/msqz/5rKs/+ayrP/msqz/5rKs/+ayrP/VqeA////
+        /wBZqoOWWaqD/1mqg/9ZqoP/WaqD/1mqg/9ZqoP/WaqD/1mqg/9ZqoP/WaqD/1mqg/9ZqoP/WaqD/1mq
+        g5b///8AAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAB
+        AAAAAQAAAAEAAA==
+</value>
   </data>
 </root>
