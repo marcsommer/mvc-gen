@@ -8,7 +8,7 @@ using DbGen.SplashForm;
 using DbGenLibrary.IO;
 using DbGenLibrary.SchemaExtend;
 using DbGenLibrary.SolutionGen;
-using DbGenLibrary.SQL;
+using DbGenLibrary.SqlSchema;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;

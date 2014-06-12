@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using DbGen.SplashForm;
-using DbGenLibrary.SQL;
+using DbGenLibrary.SqlSchema;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 

@@ -64,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MvcResources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Resources\bootstrapjs" />
     <None Include="Resources\Errorcshtml" />
