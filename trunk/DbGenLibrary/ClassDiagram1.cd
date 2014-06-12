@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DbGenLibrary.CSharp.Attribute" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSharp\Attribute.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DbGenLibrary.CSharp.Class" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABAAAAAECAAAMAAAAAAQAAAAACAAAAAAAAAACAAA=</HashCode>
+      <FileName>CSharp\Class.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DbGenLibrary.CSharp.Method" BaseTypeListCollapsed="true">
+    <Position X="12" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAIAAAAAAQAAAAAAAAAAIAQAAAEAAA=</HashCode>
+      <FileName>CSharp\Method.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DbGenLibrary.CSharp.NameSpace">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAMAAIAAAQAAAAAAAgAACAAAAAAAAA=</HashCode>
+      <FileName>CSharp\NameSpace.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DbGenLibrary.CSharp.Property" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAEAAAAAAAMAAAAAAQQAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>CSharp\Property.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DbGenLibrary.IO.BinaryFile">
+    <Position X="0.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAA=</HashCode>
+      <FileName>IO\BinaryFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.IO.ProjectFile">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>IO\ProjectFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.IO.ProjectFolder">
+    <Position X="8.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAIAAAAAACAAAAAQAAAAAAAAAAAAAAAEAAKA=</HashCode>
+      <FileName>IO\ProjectFolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.IO.TextFile">
+    <Position X="3.5" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACAAAAAA=</HashCode>
+      <FileName>IO\TextFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SchemaExtend.GenInfo">
+    <Position X="15.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAgAAAQAAAAAAAgAAAACAAUAAACAA=</HashCode>
+      <FileName>SchemaExtend\GenInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SchemaExtend.MapColumn">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAgAAAAAAAAABgAQAAABIAAAAAAQAAAAAoIAA=</HashCode>
+      <FileName>SchemaExtend\MapColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SchemaExtend.MapForeignKey">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAEAAAAAAAABhAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>SchemaExtend\MapForeignKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SchemaExtend.MapTable">
+    <Position X="10" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAAQgIgAQ=</HashCode>
+      <FileName>SchemaExtend\MapTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SolutionGen.BusinessLogic.CsProject">
+    <Position X="15.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIIAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SolutionGen\BusinessLogic\CsProject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SolutionGen.BusinessLogic.Mapping">
+    <Position X="8.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>SolutionGen\BusinessLogic\Mapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SolutionGen.GenController">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAIAAAAACAAAAAAAAAAAAIAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>SolutionGen\GenController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SolutionGen.MVC.Controller">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>SolutionGen\MVC\Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SolutionGen.MVC.Model">
+    <Position X="13.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAIQAAAAAAAAAAAAAAAAAgAAABAAAA=</HashCode>
+      <FileName>SolutionGen\MVC\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SolutionGen.MVC.Views">
+    <Position X="15.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAgAAABgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SolutionGen\MVC\Views.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SqlSchema.SqlInformation">
+    <Position X="3.75" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAEAAggAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlSchema\ISqlInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.SqlSchema.SqlServer">
+    <Position X="0.5" Y="9.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAEBAAAAAQAAAAAgAAABCAAAAAIAABAAAAAA=</HashCode>
+      <FileName>SqlSchema\SqlServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DbGenLibrary.Xml.XmlUtility">
+    <Position X="13.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Xml\XmlUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DbGenLibrary.CSharp.ICsharpComponent">
+    <Position X="7.25" Y="12.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSharp\ICsharpComponent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DbGenLibrary.Text.ITextWriteable">
+    <Position X="12.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Text\ITextWriteable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DbGenLibrary.SqlSchema.AssociationType">
+    <Position X="7" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAACAAAAAABAAAAAAACAAAAA=</HashCode>
+      <FileName>SqlSchema\AssociationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
-using DbGenLibrary.SqlSchema;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Smo.Wmi;
 
-namespace DbGenLibrary.SQL
+namespace DbGenLibrary.SqlSchema
 {
     public class SqlServer : SqlInformation
     {
