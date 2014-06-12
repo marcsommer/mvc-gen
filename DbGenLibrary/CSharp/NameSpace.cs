@@ -18,10 +18,7 @@ namespace DbGenLibrary.CSharp
 
         public Class Class
         {
-            get
-            {
-                return Classes.FirstOrDefault();
-            }
+            get { return Classes.FirstOrDefault(); }
             set
             {
                 if (Classes == null)

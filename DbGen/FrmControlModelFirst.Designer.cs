@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DbGen.SplashForm.SplashScreenLoadingMainForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmControlModelFirst));
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel10 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel11 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel12 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel13 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel14 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel15 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel16 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel17 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel18 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel1 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel2 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel3 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel4 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel5 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel6 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel7 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel8 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel9 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.barManager = new DevExpress.XtraBars.BarManager(this.components);
@@ -180,6 +180,7 @@
             this.iExit.Caption = "&Thoát";
             this.iExit.Id = 9;
             this.iExit.Name = "iExit";
+            this.iExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iExit_ItemClick);
             // 
             // barSubItemView
             // 
@@ -470,34 +471,34 @@
             this.tbPageSize.Name = "tbPageSize";
             this.tbPageSize.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.tbPageSize.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            trackBarLabel10.Label = "10";
-            trackBarLabel10.Value = 10;
-            trackBarLabel11.Label = "15";
-            trackBarLabel11.Value = 15;
-            trackBarLabel12.Label = "20";
-            trackBarLabel12.Value = 20;
-            trackBarLabel13.Label = "25";
-            trackBarLabel13.Value = 25;
-            trackBarLabel14.Label = "30";
-            trackBarLabel14.Value = 30;
-            trackBarLabel15.Label = "35";
-            trackBarLabel15.Value = 35;
-            trackBarLabel16.Label = "40";
-            trackBarLabel16.Value = 40;
-            trackBarLabel17.Label = "45";
-            trackBarLabel17.Value = 45;
-            trackBarLabel18.Label = "50";
-            trackBarLabel18.Value = 50;
+            trackBarLabel1.Label = "10";
+            trackBarLabel1.Value = 10;
+            trackBarLabel2.Label = "15";
+            trackBarLabel2.Value = 15;
+            trackBarLabel3.Label = "20";
+            trackBarLabel3.Value = 20;
+            trackBarLabel4.Label = "25";
+            trackBarLabel4.Value = 25;
+            trackBarLabel5.Label = "30";
+            trackBarLabel5.Value = 30;
+            trackBarLabel6.Label = "35";
+            trackBarLabel6.Value = 35;
+            trackBarLabel7.Label = "40";
+            trackBarLabel7.Value = 40;
+            trackBarLabel8.Label = "45";
+            trackBarLabel8.Value = 45;
+            trackBarLabel9.Label = "50";
+            trackBarLabel9.Value = 50;
             this.tbPageSize.Properties.Labels.AddRange(new DevExpress.XtraEditors.Repository.TrackBarLabel[] {
-            trackBarLabel10,
-            trackBarLabel11,
-            trackBarLabel12,
-            trackBarLabel13,
-            trackBarLabel14,
-            trackBarLabel15,
-            trackBarLabel16,
-            trackBarLabel17,
-            trackBarLabel18});
+            trackBarLabel1,
+            trackBarLabel2,
+            trackBarLabel3,
+            trackBarLabel4,
+            trackBarLabel5,
+            trackBarLabel6,
+            trackBarLabel7,
+            trackBarLabel8,
+            trackBarLabel9});
             this.tbPageSize.Properties.Maximum = 50;
             this.tbPageSize.Properties.Minimum = 10;
             this.tbPageSize.Properties.ShowLabels = true;

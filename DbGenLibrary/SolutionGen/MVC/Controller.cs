@@ -5,17 +5,16 @@ using DbGenLibrary.Text;
 
 namespace DbGenLibrary.SolutionGen.MVC
 {
-    class Controller
+    internal class Controller
     {
         public static ProjectFile ControllderFor(MapTable table)
         {
-            var ctl = MvcControllerResources.Controller;
+            string ctl = MvcControllerResources.Controller;
 
             if (table.PrimaryKey != null)
             {
-                var key = table.PrimaryKey;
-                var nullType = GetNullType(key.Type);
-
+                MapColumn key = table.PrimaryKey;
+                string nullType = GetNullType(key.Type);
 
 
                 string details = MvcControllerResources.Details.WithIndent(2);
@@ -24,7 +23,6 @@ namespace DbGenLibrary.SolutionGen.MVC
                 ctl = ctl.Replace("@Details@", details);
                 ctl = ctl.Replace("@Edit@", edit);
                 ctl = ctl.Replace("@Delete@", delete);
-
 
 
                 ctl = ctl.Replace("@KeyType?@", nullType);
@@ -45,7 +43,7 @@ namespace DbGenLibrary.SolutionGen.MVC
         }
 
 
-        static string GetNullType(string type)
+        private static string GetNullType(string type)
         {
             switch (type)
             {

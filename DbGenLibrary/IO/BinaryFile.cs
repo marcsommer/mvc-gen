@@ -1,24 +1,23 @@
-﻿using System.IO;
-
-namespace DbGenLibrary.IO
+﻿namespace DbGenLibrary.IO
 {
     public class BinaryFile : ProjectFile
     {
-        public override byte[] GetContent()
+        private BinaryFile()
         {
-            return Bytes;
         }
 
-         BinaryFile()
-        {
-
-        }
-        public BinaryFile(byte[] bytes,string fileName)
+        public BinaryFile(byte[] bytes, string fileName)
             : this()
         {
             Bytes = bytes;
             FileName = fileName;
         }
+
         public byte[] Bytes { get; set; }
+
+        public override byte[] GetContent()
+        {
+            return Bytes;
+        }
     }
 }

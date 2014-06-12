@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DbGen
+﻿namespace DbGen
 {
-    enum GenType
+    internal enum GenType
     {
-        LibraryOnly,MvcSolution
+        LibraryOnly,
+        MvcSolution
     }
 }

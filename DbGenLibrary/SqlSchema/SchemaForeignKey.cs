@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using DbGenLibrary.SQL;
 
 namespace DbGenLibrary.SqlSchema
 {
@@ -26,6 +25,7 @@ namespace DbGenLibrary.SqlSchema
         public SchemaTable OtherTable { get; set; }
         public List<SchemaColumn> ThisColumns { get; set; }
         public bool Checked { get; set; }
+
         public AssociationType AssociationType
         {
             get { return _associationType; }

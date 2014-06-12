@@ -111,7 +111,6 @@ namespace DbGenLibrary.SolutionGen.MVC
 
         private static void GenLayout(ProjectFolder folder, GenInfo info)
         {
-
             //view
             string layoutcshtml = MvcResources._Layoutcshtml
                 .Replace("@WebTitle@", info.ProjectTitle)

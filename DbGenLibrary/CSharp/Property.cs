@@ -15,15 +15,14 @@ namespace DbGenLibrary.CSharp
         public Property(string columnName)
             : this()
         {
-
         }
 
         public List<Attribute> Attributes { get; set; }
-        public string Modifier { get; set; }
-        public string Name { get; set; }
         public string Type { get; set; }
 
         public string Comment { get; set; }
+        public string Modifier { get; set; }
+        public string Name { get; set; }
 
         public string GetText(int indentLevel)
         {

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DbGenLibrary.CSharp;
 using DbGenLibrary.IO;
 using DbGenLibrary.SchemaExtend;
 using DbGenLibrary.SqlSchema;
 using DbGenLibrary.Text;
-using Attribute = DbGenLibrary.CSharp.Attribute;
 
 namespace DbGenLibrary.SolutionGen.BusinessLogic
 {
@@ -15,12 +12,12 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
     {
         public static ProjectFolder GetMappingFolder(GenInfo genInfo)
         {
-            var folder = new ProjectFolder() { Name = "Mapping" };
-            foreach (var table in genInfo.Tables)
+            var folder = new ProjectFolder {Name = "Mapping"};
+            foreach (MapTable table in genInfo.Tables)
             {
                 folder.Files.Add(new NameSpace
                 {
-                    Using = new List<string> { "System", "System.Collections.Generic", "System.Linq", "System.Text", "BLToolkit.Mapping", "BLToolkit.DataAccess", "BLToolkit.Data", "BLToolkit.Data.Linq" },
+                    Using = new List<string> {"System", "System.Collections.Generic", "System.Linq", "System.Text", "BLToolkit.Mapping", "BLToolkit.DataAccess", "BLToolkit.Data", "BLToolkit.Data.Linq"},
                     Name = string.Format("{0}.Mapping", genInfo.NameSpace),
                     Class = ToClass(table),
                     FileName = string.Format("{0}.cs", table.ClassText)
@@ -31,14 +28,14 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
         }
 
 
-        static Class ToClass(MapTable table)
+        private static Class ToClass(MapTable table)
         {
             var t = new Class(table.TableName)
             {
                 Properties = table.Columns.Select(ToProperty).ToList()
             };
 
-            foreach (var fk in table.ForeignKeys)
+            foreach (MapForeignKey fk in table.ForeignKeys)
             {
                 var p = new Property
                 {
@@ -46,7 +43,7 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
                     Name = fk.OtherTable == t.Name || t.Properties.Any(pr => pr.Name.Equals(fk.OtherTable)) ? fk.KeyName : fk.OtherTable,
                 };
                 p.Attributes.Add(new Attribute(string.Format("Association(ThisKey=\"{0}\", OtherKey=\"{1}\", CanBeNull={2})",
-                  fk.ThisColumns, fk.OtherColumns,
+                    fk.ThisColumns, fk.OtherColumns,
                     fk.CanBeNull.ToString().ToLower())));
                 t.Properties.Add(p);
             }
@@ -54,9 +51,9 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
             return t;
         }
 
-        static Property ToProperty(MapColumn schemaColumn)
+        private static Property ToProperty(MapColumn schemaColumn)
         {
-            var p = new Property()
+            var p = new Property
             {
                 Name = schemaColumn.ColumnName.SimpleString(),
                 Type = schemaColumn.Type
@@ -70,8 +67,5 @@ namespace DbGenLibrary.SolutionGen.BusinessLogic
 
             return p;
         }
-
-
-
     }
 }

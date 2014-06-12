@@ -1,8 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using DbGen.SplashForm;
 using DbGenLibrary.SQL;
@@ -18,29 +17,6 @@ namespace DbGen
             InitializeComponent();
             SetStyle();
             GetAllInstances();
-        }
-
-        private void btnKiemTra_Click(object sender, EventArgs e)
-        {
-            var connection = TestConnection();
-            XtraMessageBox.Show(connection ? "Kết nối thành công" : "Kết nối thất bại");
-        }
-
-        bool TestConnection()
-        {
-            SplashScreenManager.ShowForm(typeof(SplashScreenLoading));
-            var connection = SqlServer.TestConnection(SqlConnectionStringBuilder.ConnectionString);
-            SplashScreenManager.CloseForm();
-            return connection;
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            var connection = TestConnection();
-            if (!connection)
-                XtraMessageBox.Show("Kết nối thất bại");
-            else
-                DialogResult = DialogResult.OK;
         }
 
         public SqlConnectionStringBuilder SqlConnectionStringBuilder
@@ -62,15 +38,37 @@ namespace DbGen
                 }
                 return sBuilder;
             }
+        }
 
+        private void btnKiemTra_Click(object sender, EventArgs e)
+        {
+            bool connection = TestConnection();
+            XtraMessageBox.Show(connection ? "Kết nối thành công" : "Kết nối thất bại");
+        }
+
+        private bool TestConnection()
+        {
+            SplashScreenManager.ShowForm(typeof (SplashScreenLoading));
+            bool connection = SqlServer.TestConnection(SqlConnectionStringBuilder.ConnectionString);
+            SplashScreenManager.CloseForm();
+            return connection;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            bool connection = TestConnection();
+            if (!connection)
+                XtraMessageBox.Show("Kết nối thất bại");
+            else
+                DialogResult = DialogResult.OK;
         }
 
         private void GetAllInstances()
         {
-          //  SplashScreenManager.ShowForm(typeof(SplashScreenLoading));
+            //  SplashScreenManager.ShowForm(typeof(SplashScreenLoading));
             try
             {
-                var instances = SqlServer.GetLocalInstances();
+                List<string> instances = SqlServer.GetLocalInstances();
                 cmbMayChu.Text = "";
                 cmbMayChu.Properties.Items.Clear();
                 cmbMayChu.Properties.Items.AddRange(instances);
@@ -81,7 +79,7 @@ namespace DbGen
                 cmbMayChu.Properties.Items.Clear();
                 XtraMessageBox.Show("Xảy ra lỗi khi đọc thông tin về máy chủ, xin vui lòng kiểm tra lại cài đặt SQL Server!");
             }
-          //  SplashScreenManager.CloseForm();
+            //  SplashScreenManager.CloseForm();
         }
 
 
@@ -97,7 +95,6 @@ namespace DbGen
 
         private void frmCaiDatDuLieu_Load(object sender, EventArgs e)
         {
-
         }
 
         private void rdWindows_CheckedChanged(object sender, EventArgs e)
@@ -109,7 +106,5 @@ namespace DbGen
         {
             gcTaiKhoan.Enabled = rdServer.Checked;
         }
-
-
     }
 }

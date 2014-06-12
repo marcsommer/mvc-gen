@@ -24,11 +24,10 @@ namespace DbGenLibrary.SchemaExtend
         public string NameSpace { get; set; }
         public string Author { get; set; }
         public string ConnectionString { get; set; }
+
         public void SetName(string name)
         {
             DbName = ProjectTitle = NameSpace = name.SimpleString();
         }
-
-
     }
 }
